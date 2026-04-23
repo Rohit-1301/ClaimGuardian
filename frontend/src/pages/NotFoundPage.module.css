@@ -1,0 +1,41 @@
+.page {
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  min-height:      100vh;
+  background:      var(--color-slate-50);
+}
+
+.content {
+  text-align: center;
+  padding:    var(--space-8);
+}
+
+.errorCode {
+  font-size:      9rem;
+  font-weight:    var(--font-weight-extrabold);
+  color:          var(--color-slate-200);
+  line-height:    1;
+  letter-spacing: -0.05em;
+  margin-bottom:  var(--space-4);
+  user-select:    none;
+}
+
+.title {
+  font-size:     var(--font-size-3xl);
+  font-weight:   var(--font-weight-bold);
+  color:         var(--color-slate-900);
+  margin-bottom: var(--space-3);
+}
+
+.desc {
+  font-size:     var(--font-size-lg);
+  color:         var(--color-slate-500);
+  margin-bottom: var(--space-8);
+}
+
+.actions {
+  display:     flex;
+  gap:         var(--space-3);
+  justify-content: center;
+}

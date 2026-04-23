@@ -1,0 +1,111 @@
+.footer {
+  background:  var(--color-slate-900);
+  color:       var(--color-slate-300);
+  padding-top: var(--space-16);
+}
+
+.inner {
+  display:   flex;
+  gap:       var(--space-16);
+  flex-wrap: wrap;
+}
+
+/* ── Brand Column ── */
+.brand {
+  flex:      1;
+  min-width: 240px;
+  max-width: 320px;
+}
+
+.logo {
+  display:     flex;
+  align-items: center;
+  gap:         var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+.logoText {
+  font-size:   var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color:       var(--color-white);
+  letter-spacing: -0.03em;
+}
+
+.logoAccent { color: var(--color-primary-400); }
+
+.tagline {
+  font-size:   var(--font-size-sm);
+  color:       var(--color-slate-400);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--space-5);
+}
+
+.badges {
+  display:  flex;
+  gap:      var(--space-2);
+  flex-wrap: wrap;
+}
+
+.trustBadge {
+  display:       inline-flex;
+  align-items:   center;
+  padding:       var(--space-1) var(--space-3);
+  background:    rgba(255,255,255,0.06);
+  border:        1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-full);
+  font-size:     var(--font-size-xs);
+  color:         var(--color-slate-300);
+  font-weight:   var(--font-weight-medium);
+}
+
+/* ── Link Columns ── */
+.linksGrid {
+  display:   flex;
+  gap:       var(--space-12);
+  flex-wrap: wrap;
+  flex:      1;
+  justify-content: flex-end;
+}
+
+.linkColumn { min-width: 120px; }
+
+.columnTitle {
+  font-size:     var(--font-size-xs);
+  font-weight:   var(--font-weight-semibold);
+  color:         var(--color-white);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: var(--space-4);
+}
+
+.linkColumn ul {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--space-3);
+}
+
+.link {
+  font-size:  var(--font-size-sm);
+  color:      var(--color-slate-400);
+  transition: color var(--transition-fast);
+}
+.link:hover { color: var(--color-white); }
+
+/* ── Bottom Bar ── */
+.bottomBar {
+  margin-top:   var(--space-16);
+  padding:      var(--space-5) 0;
+  border-top:   1px solid rgba(255,255,255,0.08);
+}
+
+.copyright {
+  font-size:   var(--font-size-sm);
+  color:       var(--color-slate-500);
+  text-align:  center;
+}
+
+@media (max-width: 768px) {
+  .inner      { flex-direction: column; gap: var(--space-10); }
+  .brand      { max-width: 100%; }
+  .linksGrid  { justify-content: flex-start; }
+}

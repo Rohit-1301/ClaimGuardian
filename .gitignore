@@ -1,0 +1,69 @@
+# ─────────────────────────────────────────────
+# ClaimGuardian — .gitignore
+# ─────────────────────────────────────────────
+
+# ── Environment Variables (NEVER commit) ──
+.env
+.env.local
+.env.*.local
+
+# ── Dependencies ──
+node_modules/
+.pnp
+.pnp.js
+
+# ── Build Output ──
+dist/
+build/
+*.tsbuildinfo
+
+# ── Logs ──
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ── OS Files ──
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── IDEs ──
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# ── Python Backend (Phase 3) ──
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+.Python
+*.egg-info/
+.eggs/
+*.egg
+.venv/
+venv/
+env/
+ENV/
+
+# ── Conda ──
+.conda/
+
+# ── Test Coverage ──
+coverage/
+.nyc_output/
+htmlcov/
+.coverage
+
+# ── Misc ──
+*.local
+.cache/
