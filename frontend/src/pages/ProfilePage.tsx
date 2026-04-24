@@ -6,20 +6,17 @@ import {
   UserIdentityCard,
   SecurityPrivacyCard,
   ClaimActivityOverview,
-  PreferencesCard,
-  ConnectedServicesCard,
   QuickActionsCard,
   ComplianceNotice,
 } from '../components/features/profile';
 import styles from './ProfilePage.module.css';
 
 /**
- * ProfilePage — Secure Claim Management Center
+ * ProfilePage — Identity, Stats & Quick Access
  * Route: /profile  (protected)
  *
- * Layout (desktop):
- *   Left col (~60%):  UserIdentity, ClaimActivity, Preferences, Compliance
- *   Right col (~40%): Security, ConnectedServices, QuickActions
+ * Focused on WHO the user is + their claim activity.
+ * Preferences / Settings / Danger Zone → moved to /settings
  */
 export default function ProfilePage() {
   const { user } = useUser();
@@ -31,9 +28,7 @@ export default function ProfilePage() {
       <header className={styles.pageHeader}>
         <div className={styles.pageHeaderLeft}>
           <h1 className={styles.pageTitle}>My Profile</h1>
-          <p className={styles.pageSubtitle}>
-            Secure Claim Management Center
-          </p>
+          <p className={styles.pageSubtitle}>Secure Claim Management Center</p>
         </div>
         <button
           className={styles.editBtn}
@@ -57,18 +52,16 @@ export default function ProfilePage() {
 
       {/* ── Two-column responsive grid ── */}
       <div className={styles.grid}>
-        {/* ── Left Column ── */}
+        {/* Left: identity + activity */}
         <div className={styles.leftCol}>
           <UserIdentityCard />
           <ClaimActivityOverview />
-          <PreferencesCard />
           <ComplianceNotice />
         </div>
 
-        {/* ── Right Column ── */}
+        {/* Right: security status + quick actions */}
         <div className={styles.rightCol}>
           <SecurityPrivacyCard />
-          <ConnectedServicesCard />
           <QuickActionsCard />
         </div>
       </div>

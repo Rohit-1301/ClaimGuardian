@@ -51,7 +51,6 @@ export const SIDEBAR_BOTTOM_ITEMS = [
     label: 'Settings',
     href:  '/settings',
     icon:  'settings',
-    isComingSoon: true,
   },
 ] as const;
 

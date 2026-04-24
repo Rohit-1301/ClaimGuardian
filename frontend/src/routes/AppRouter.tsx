@@ -10,6 +10,7 @@ const LoginPage     = lazy(() => import('../pages/LoginPage'));
 const SignupPage     = lazy(() => import('../pages/SignupPage'));
 const DashboardPage = lazy(() => import('../pages/DashboardPage'));
 const ProfilePage   = lazy(() => import('../pages/ProfilePage'));
+const SettingsPage  = lazy(() => import('../pages/SettingsPage'));
 const NotFoundPage  = lazy(() => import('../pages/NotFoundPage'));
 
 function PageLoader() {
@@ -44,6 +45,14 @@ export default function AppRouter() {
             element={
               <ProtectedRoute>
                 <ProfilePage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/settings"
+            element={
+              <ProtectedRoute>
+                <SettingsPage />
               </ProtectedRoute>
             }
           />

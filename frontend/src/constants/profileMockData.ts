@@ -24,12 +24,6 @@ export const CONNECTED_SERVICES = [
     status:      'connected' as const,
   },
   {
-    id:          'ai-engine',
-    name:        'AI Validation Engine',
-    description: 'Claim analysis & error detection',
-    status:      'ready' as const,
-  },
-  {
     id:          'ocr',
     name:        'OCR Document Parser',
     description: 'Automated claim data extraction',
