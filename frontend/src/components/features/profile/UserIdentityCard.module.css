@@ -1,0 +1,157 @@
+.card {
+  background:    var(--color-white);
+  border:        1px solid var(--color-slate-200);
+  border-radius: var(--radius-2xl);
+  padding:       var(--space-7);
+  display:       flex;
+  flex-direction: column;
+  gap:           var(--space-6);
+  transition:    box-shadow var(--transition-base);
+}
+.card:hover { box-shadow: var(--shadow-md); }
+
+/* ── Avatar Row ── */
+.identityRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+}
+
+.avatarWrap {
+  position: relative;
+  width:  72px;
+  height: 72px;
+  flex-shrink: 0;
+}
+
+.initials {
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  width:           100%;
+  height:          100%;
+  border-radius:   50%;
+  background:      linear-gradient(135deg, var(--color-primary-600), var(--color-teal-600));
+  color:           var(--color-white);
+  font-size:       var(--font-size-2xl);
+  font-weight:     var(--font-weight-bold);
+  letter-spacing:  -0.02em;
+  user-select:     none;
+  box-shadow:      var(--shadow-primary);
+}
+
+.onlineDot {
+  position:      absolute;
+  bottom:        3px;
+  right:         3px;
+  width:         14px;
+  height:        14px;
+  background:    var(--color-success);
+  border-radius: 50%;
+  border:        2.5px solid var(--color-white);
+  box-shadow:    0 0 0 2px rgba(16,185,129,0.2);
+}
+
+.identityInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.name {
+  font-size:      var(--font-size-2xl);
+  font-weight:    var(--font-weight-bold);
+  color:          var(--color-slate-900);
+  letter-spacing: -0.03em;
+  line-height:    1.2;
+}
+
+.roleBadge {
+  display:       inline-flex;
+  align-items:   center;
+  gap:           var(--space-1);
+  padding:       4px 10px;
+  background:    var(--color-primary-50);
+  color:         var(--color-primary-700);
+  border:        1px solid var(--color-primary-100);
+  border-radius: var(--radius-full);
+  font-size:     var(--font-size-xs);
+  font-weight:   var(--font-weight-semibold);
+  width:         fit-content;
+}
+
+/* ── Info Grid ── */
+.infoGrid {
+  display:        flex;
+  flex-direction: column;
+  gap:            0;
+  border:         1px solid var(--color-slate-100);
+  border-radius:  var(--radius-lg);
+  overflow:       hidden;
+}
+
+.infoRow {
+  display:     grid;
+  grid-template-columns: 20px 110px 1fr;
+  align-items: center;
+  gap:         var(--space-3);
+  padding:     10px var(--space-4);
+  border-bottom: 1px solid var(--color-slate-100);
+  transition:  background var(--transition-fast);
+}
+.infoRow:last-child { border-bottom: none; }
+.infoRow:hover    { background: var(--color-slate-50); }
+
+.infoIcon  { color: var(--color-slate-400); display: flex; }
+.infoLabel { font-size: var(--font-size-sm); color: var(--color-slate-500); font-weight: var(--font-weight-medium); }
+.infoValue { font-size: var(--font-size-sm); color: var(--color-slate-800); font-weight: var(--font-weight-semibold); text-align: right; }
+
+/* ── Profile Completion ── */
+.completionSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.completionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.completionLabel {
+  display:     flex;
+  align-items: center;
+  gap:         var(--space-1);
+  font-size:   var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color:       var(--color-slate-700);
+}
+.completionLabel svg { color: var(--color-success); }
+
+.completionPct {
+  font-size:   var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  color:       var(--color-primary-600);
+}
+
+.progressTrack {
+  height:        8px;
+  background:    var(--color-slate-100);
+  border-radius: var(--radius-full);
+  overflow:      hidden;
+}
+
+.progressFill {
+  height:        100%;
+  background:    linear-gradient(90deg, var(--color-primary-500), var(--color-teal-500));
+  border-radius: var(--radius-full);
+  transition:    width 0.8s var(--ease-out);
+}
+
+.completionHint {
+  font-size: var(--font-size-xs);
+  color:     var(--color-slate-400);
+  line-height: var(--line-height-relaxed);
+}

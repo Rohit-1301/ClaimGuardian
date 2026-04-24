@@ -1,43 +1,75 @@
-import { UserProfile } from '@clerk/react';
+import { useState } from 'react';
+import { useUser } from '@clerk/react';
+import { UserCog } from 'lucide-react';
 import { DashboardLayout } from '../components/layout';
+import {
+  UserIdentityCard,
+  SecurityPrivacyCard,
+  ClaimActivityOverview,
+  PreferencesCard,
+  ConnectedServicesCard,
+  QuickActionsCard,
+  ComplianceNotice,
+} from '../components/features/profile';
 import styles from './ProfilePage.module.css';
 
 /**
- * Profile Page — Clerk UserProfile management
+ * ProfilePage — Secure Claim Management Center
  * Route: /profile  (protected)
+ *
+ * Layout (desktop):
+ *   Left col (~60%):  UserIdentity, ClaimActivity, Preferences, Compliance
+ *   Right col (~40%): Security, ConnectedServices, QuickActions
  */
 export default function ProfilePage() {
+  const { user } = useUser();
+  const [editMode, setEditMode] = useState(false);
+
   return (
     <DashboardLayout>
-      <h1 className={styles.pageTitle}>Account & Profile</h1>
-      <p className={styles.pageSubtitle}>
-        Manage your personal information, security settings, and connected accounts.
-      </p>
+      {/* ── Page Header ── */}
+      <header className={styles.pageHeader}>
+        <div className={styles.pageHeaderLeft}>
+          <h1 className={styles.pageTitle}>My Profile</h1>
+          <p className={styles.pageSubtitle}>
+            Secure Claim Management Center
+          </p>
+        </div>
+        <button
+          className={styles.editBtn}
+          onClick={() => setEditMode((v) => !v)}
+          aria-pressed={editMode}
+          aria-label="Edit profile"
+        >
+          <UserCog size={16} aria-hidden="true" />
+          {editMode ? 'Save Changes' : 'Edit Profile'}
+        </button>
+      </header>
 
-      <div className={styles.profileWrap}>
-        <UserProfile routing="hash" />
+      {/* ── Account Status Strip ── */}
+      <div className={styles.statusStrip}>
+        <span className={styles.statusDot} aria-hidden="true" />
+        <span className={styles.statusText}>
+          Signed in as&nbsp;<strong>{user?.primaryEmailAddress?.emailAddress}</strong>
+          &nbsp;·&nbsp;Session active
+        </span>
       </div>
 
-      {/* ── Preferences Placeholder ── */}
-      <div className={styles.prefsSection}>
-        <h2 className={styles.prefsTitle}>Preferences</h2>
-        <p className={styles.prefsDesc}>
-          Notification settings and workspace preferences will be available in a future update.
-        </p>
-        <div className={styles.prefItems}>
-          {[
-            { label: 'Email Notifications',  desc: 'Receive validation results and report summaries via email', value: 'Coming soon' },
-            { label: 'Weekly Digest',         desc: 'Weekly summary of claim activity and denial trends',         value: 'Coming soon' },
-            { label: 'EHR Integration',       desc: 'Connect your EHR/PM system for seamless claim submission',     value: 'Phase 2'     },
-          ].map((pref) => (
-            <div key={pref.label} className={styles.prefItem}>
-              <div>
-                <p className={styles.prefLabel}>{pref.label}</p>
-                <p className={styles.prefDesc}>{pref.desc}</p>
-              </div>
-              <span className={styles.prefBadge}>{pref.value}</span>
-            </div>
-          ))}
+      {/* ── Two-column responsive grid ── */}
+      <div className={styles.grid}>
+        {/* ── Left Column ── */}
+        <div className={styles.leftCol}>
+          <UserIdentityCard />
+          <ClaimActivityOverview />
+          <PreferencesCard />
+          <ComplianceNotice />
+        </div>
+
+        {/* ── Right Column ── */}
+        <div className={styles.rightCol}>
+          <SecurityPrivacyCard />
+          <ConnectedServicesCard />
+          <QuickActionsCard />
         </div>
       </div>
     </DashboardLayout>

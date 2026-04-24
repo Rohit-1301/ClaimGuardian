@@ -3,10 +3,9 @@
    ========================================================= */
 
 export const PUBLIC_NAV_LINKS = [
-  { label: 'Features',  href: '/#features'  },
-  { label: 'How it works', href: '/#how-it-works' },
-  { label: 'Pricing',   href: '/#pricing'   },
-  { label: 'Resources', href: '/#resources' },
+  { label: 'Features',    href: '/#features'     },
+  { label: 'How It Works', href: '/#how-it-works' },
+  { label: 'Resources',   href: '/#resources'    },
 ] as const;
 
 export const SIDEBAR_NAV_ITEMS = [

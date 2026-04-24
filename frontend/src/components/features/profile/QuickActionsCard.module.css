@@ -1,0 +1,100 @@
+.card {
+  background:    var(--color-white);
+  border:        1px solid var(--color-slate-200);
+  border-radius: var(--radius-2xl);
+  padding:       var(--space-6);
+  transition:    box-shadow var(--transition-base);
+}
+.card:hover { box-shadow: var(--shadow-md); }
+
+.header {
+  display:       flex;
+  align-items:   center;
+  gap:           var(--space-3);
+  margin-bottom: var(--space-5);
+}
+
+.headerIcon {
+  width:           38px;
+  height:          38px;
+  border-radius:   var(--radius-lg);
+  background:      var(--color-primary-50);
+  color:           var(--color-primary-600);
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  flex-shrink:     0;
+}
+
+.title   { font-size: var(--font-size-base); font-weight: var(--font-weight-semibold); color: var(--color-slate-900); }
+.subtitle { font-size: var(--font-size-xs); color: var(--color-slate-400); margin-top: 2px; }
+
+/* ── Actions ── */
+.actions {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--space-2);
+}
+
+.actionBtn {
+  display:       flex;
+  align-items:   center;
+  gap:           var(--space-2);
+  width:         100%;
+  padding:       10px var(--space-4);
+  border-radius: var(--radius-lg);
+  font-size:     var(--font-size-sm);
+  font-weight:   var(--font-weight-semibold);
+  border:        1.5px solid transparent;
+  cursor:        pointer;
+  font-family:   var(--font-family-base);
+  transition:    all var(--transition-base);
+  text-decoration: none;
+
+  /* Default: primary blue */
+  background:   var(--color-primary-600);
+  color:        var(--color-white);
+  border-color: var(--color-primary-600);
+  box-shadow:   var(--shadow-primary);
+}
+.actionBtn:hover {
+  background:   var(--color-primary-700);
+  border-color: var(--color-primary-700);
+  transform:    translateY(-1px);
+}
+.actionBtn:active { transform: translateY(0); }
+
+/* Teal variant */
+.teal {
+  background:   var(--color-teal-600);
+  border-color: var(--color-teal-600);
+  box-shadow:   var(--shadow-teal);
+}
+.teal:hover {
+  background:   var(--color-teal-700);
+  border-color: var(--color-teal-700);
+}
+
+/* Outline variant */
+.outline {
+  background:   transparent;
+  color:        var(--color-primary-600);
+  border-color: var(--color-primary-200);
+  box-shadow:   none;
+}
+.outline:hover {
+  background:   var(--color-primary-50);
+  border-color: var(--color-primary-400);
+}
+
+/* Danger variant */
+.danger {
+  background:   transparent;
+  color:        var(--color-danger);
+  border-color: rgba(239,68,68,0.25);
+  box-shadow:   none;
+}
+.danger:hover {
+  background:   var(--color-danger-light);
+  border-color: var(--color-danger);
+}

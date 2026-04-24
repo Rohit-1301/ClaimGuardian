@@ -1,0 +1,133 @@
+.card {
+  background:    var(--color-white);
+  border:        1px solid var(--color-slate-200);
+  border-radius: var(--radius-2xl);
+  padding:       var(--space-6);
+  transition:    box-shadow var(--transition-base);
+}
+.card:hover { box-shadow: var(--shadow-md); }
+
+/* ── Header ── */
+.header {
+  display:         flex;
+  align-items:     center;
+  justify-content: space-between;
+  margin-bottom:   var(--space-5);
+}
+
+.headerLeft {
+  display:     flex;
+  align-items: center;
+  gap:         var(--space-3);
+}
+
+.headerIcon {
+  width:           38px;
+  height:          38px;
+  border-radius:   var(--radius-lg);
+  background:      var(--color-primary-50);
+  color:           var(--color-primary-600);
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  flex-shrink:     0;
+}
+
+.title {
+  font-size:     var(--font-size-base);
+  font-weight:   var(--font-weight-semibold);
+  color:         var(--color-slate-900);
+  line-height:   1.2;
+}
+
+.subtitle {
+  font-size: var(--font-size-xs);
+  color:     var(--color-slate-400);
+  margin-top: 2px;
+}
+
+/* ── List ── */
+.list {
+  display:        flex;
+  flex-direction: column;
+  gap:            0;
+}
+
+.item {
+  display:         flex;
+  align-items:     center;
+  justify-content: space-between;
+  gap:             var(--space-3);
+  padding:         var(--space-3) 0;
+  border-bottom:   1px solid var(--color-slate-100);
+  transition:      background var(--transition-fast);
+}
+.item:last-child { border-bottom: none; }
+
+.itemLeft {
+  display:     flex;
+  align-items: center;
+  gap:         var(--space-3);
+  flex:        1;
+  min-width:   0;
+}
+
+.itemIcon {
+  width:           32px;
+  height:          32px;
+  border-radius:   var(--radius-md);
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  flex-shrink:     0;
+}
+
+.itemLabel {
+  font-size:   var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color:       var(--color-slate-700);
+  line-height: 1.3;
+}
+
+.itemDesc {
+  font-size:   var(--font-size-xs);
+  color:       var(--color-slate-400);
+  margin-top:  2px;
+}
+
+/* ── Status Badge ── */
+.badge {
+  display:       inline-flex;
+  align-items:   center;
+  gap:           5px;
+  padding:       3px 10px;
+  border-radius: var(--radius-full);
+  font-size:     var(--font-size-xs);
+  font-weight:   var(--font-weight-semibold);
+  white-space:   nowrap;
+  flex-shrink:   0;
+}
+
+.badgeDot {
+  width:         6px;
+  height:        6px;
+  border-radius: 50%;
+  flex-shrink:   0;
+}
+
+/* ── Level Variants ── */
+.badgeSuccess { background: var(--color-success-light); color: #065F46; }
+.badgeWarning { background: var(--color-warning-light); color: #92400E; }
+.badgeInfo    { background: var(--color-info-light);    color: #075985; }
+.badgeNeutral { background: var(--color-slate-100);     color: var(--color-slate-600); }
+
+.dotSuccess { background: var(--color-success); }
+.dotWarning { background: var(--color-warning); }
+.dotInfo    { background: var(--color-info);    }
+.dotNeutral { background: var(--color-slate-400); }
+
+/* icon bg variants */
+.itemIcon.dotSuccess { background: var(--color-success-light); color: var(--color-success); }
+.itemIcon.dotWarning { background: var(--color-warning-light); color: var(--color-warning); }
+.itemIcon.dotInfo    { background: var(--color-info-light);    color: var(--color-info);    }
+.itemIcon.dotNeutral { background: var(--color-slate-100);     color: var(--color-slate-500); }
